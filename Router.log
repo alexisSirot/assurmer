@@ -1,0 +1,187 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2022.04.20 17:19:55 =~=~=~=~=~=~=~=~=~=~=~=
+
+Current configuration : 2695 bytes
+!
+! Last configuration change at 13:04:34 UTC Wed Apr 20 2022
+!
+version 16.8
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname Routeur-KAL
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ --More--          exit-address-family
+ --More--         !
+ --More--         enable password sio
+ --More--         !
+ --More--         no aaa new-model
+ --More--         !
+ --More--         ip domain name KAL.FR
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         subscriber templating
+ --More--         !
+ --More--         !
+ --More--         multilink bundle-name authenticated
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         license udi pid ISR4321/K9 sn FDO22350MZC
+ --More--         no license smart enable
+ --More--         diagnostic bootup level minimal
+ --More--         !
+ --More--         spanning-tree extend system-id
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         username admin password 0 sio
+ --More--         !
+ --More--         redundancy
+ --More--          mode none
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         interface GigabitEthernet0/0/0
+ --More--          no ip address
+ --More--          negotiation auto
+ --More--         !
+ --More--         interface GigabitEthernet0/0/0.10
+ --More--          encapsulation dot1Q 10
+ --More--          ip address 192.168.10.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/0.20
+ --More--          encapsulation dot1Q 20
+ --More--          ip address 192.168.20.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/0.30
+ --More--          encapsulation dot1Q 30
+ --More--          ip address 192.168.30.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/0.110
+ --More--          encapsulation dot1Q 110
+ --More--          ip address 172.16.0.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/1
+ --More--          ip address 10.0.0.1 255.255.255.0
+ --More--          negotiation auto
+ --More--         !
+ --More--         interface GigabitEthernet0/0/1.10
+ --More--          encapsulation dot1Q 10
+ --More--          ip address 10.0.10.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/1.20
+ --More--          encapsulation dot1Q 20
+ --More--          ip address 10.0.20.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/1.30
+ --More--          encapsulation dot1Q 30
+ --More--          ip address 10.0.30.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface GigabitEthernet0/0/1.110
+ --More--          encapsulation dot1Q 110
+ --More--          ip address 10.0.110.254 255.255.255.0
+ --More--          ip helper-address 172.16.0.1
+ --More--         !
+ --More--         interface Serial0/1/0
+ --More--          no ip address
+ --More--         !
+ --More--         interface Serial0/1/1
+ --More--          no ip address
+ --More--         !
+ --More--         interface GigabitEthernet0
+ --More--          vrf forwarding Mgmt-intf
+ --More--          no ip address
+ --More--          negotiation auto
+ --More--         !
+ --More--         ip forward-protocol nd
+ --More--         no ip http server
+ --More--         ip http secure-server
+ --More--         ip route 0.0.0.0 0.0.0.0 10.0.0.2
+ --More--         ip route 0.0.0.0 0.0.0.0 10.0.0.0
+ --More--         ip route 10.0.0.0 255.255.255.0 172.16.0.26
+ --More--         ip route 10.0.0.0 255.255.255.0 192.168.200.254
+ --More--         ip route 172.16.0.0 255.255.255.0 192.168.200.254
+ --More--         ip route 192.168.200.0 255.255.255.0 172.16.0.26
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         !
+ --More--         control-plane
+ --More--         !
+ --More--         !
+ --More--         line con 0
+ --More--          transport input none
+ --More--          stopbits 1
+ --More--         line aux 0
+ --More--          stopbits 1
+ --More--         line vty 0 4
+ --More--          login local
+ --More--          transport input ssh
+ --More--         !
+ --More--         wsma agent exec
+ --More--         !
+ --More--         wsma agent config
+ --More--         !
+ --More--         wsma agent filesys
+ --More--         !
+ --More--         wsma agent notify
+ --More--         !
+ --More--         !
+ --More--         end
+ --More--         
+
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0/0   unassigned      YES manual up                    up      
+Gi0/0/0.10             192.168.10.254  YES manual up                    up      
+Gi0/0/0.20             192.168.20.254  YES manual up                    up      
+Gi0/0/0.30             192.168.30.254  YES manual up                    up      
+Gi0/0/0.37             unassigned      YES manual deleted               down    
+Gi0/0/0.100            unassigned      YES manual deleted               down    
+Gi0/0/0.110            172.16.0.254    YES manual up                    up      
+GigabitEthernet0/0/1   10.0.0.1        YES manual up                    up      
+Gi0/0/1.10             10.0.10.254     YES manual up                    up      
+Gi0/0/1.20             10.0.20.254     YES manual up                    up      
+Gi0/0/1.30             10.0.30.254     YES manual up                    up      
+Gi0/0/1.37             unassigned      YES manual deleted               down    
+Gi0/0/1.100            unassigned      YES manual deleted               down    
+Gi0/0/1.110            10.0.110.254    YES manual up                    up      
+Serial0/1/0            unassigned      YES unset  down                  down    
+Serial0/1/1            unassigned      YES unset  down                  down    
+GigabitEthernet0       unassigned      YES unset  down                  down    
+
